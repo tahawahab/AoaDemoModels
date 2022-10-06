@@ -54,6 +54,12 @@ def train(context: ModelContext, **kwargs):
 
     feature_importance = model["xgb"].get_booster().get_score(importance_type="weight")
 
+    
+    print(train_df.columns)
+    print(feature_names)
+    print(target_name)
+    print(feature_importance)
+    
     record_training_stats(train_df,
                           features=feature_names,
                           targets=[target_name],
